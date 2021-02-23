@@ -1,0 +1,17 @@
+# Godot-specific ignores
+.import/
+
+# I don't know why these are omitted...
+#export.cfg
+#export_presets.cfg
+
+# Libreoffice lock files
+*.~lock*
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Builds
+*.exe
+*.x86_64
+*.pck

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/circles.png" type="Texture" id=1]
+[ext_resource path="res://BG.gd" type="Script" id=2]
+[ext_resource path="res://BG.shader" type="Shader" id=3]
+[ext_resource path="res://Images/circles_palette.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/palette_speed = 0.2
+shader_param/h_amp = 0.1
+shader_param/h_freq = 4.0
+shader_param/h_speed = 2.0
+shader_param/h_squash = false
+shader_param/h_interleaved = true
+shader_param/h_interleaved_period = 2.0
+shader_param/h_interleaved_amount = 0.8
+shader_param/v_amp = 0.5
+shader_param/v_freq = 4.0
+shader_param/v_speed = 0.5
+shader_param/v_squash = true
+shader_param/v_interleaved = false
+shader_param/v_interleaved_period = 2.0
+shader_param/v_interleaved_amount = -1.0
+shader_param/background_scale = Vector2( 2, 2 )
+shader_param/aspect_ratio = 0.5
+shader_param/offset = Vector2( 0, 0 )
+shader_param/palette = ExtResource( 4 )
+
+[node name="BG" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
